@@ -36,7 +36,7 @@ class App extends Component {
         {
           this.state.posts.map(post => {
             console.log(post);  
-            //cosnt {author, gif_url,caption,likes,createdAt} = post;
+            cosnt {author, gif_url,caption,likes,createdAt} = post;
             return <Card />
           })
         }

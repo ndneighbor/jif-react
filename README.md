@@ -4,3 +4,8 @@ its gonna be up at
 
 https://jif.herokuapp.com/
 
+the usual
+
+npm install
+
+npm start
