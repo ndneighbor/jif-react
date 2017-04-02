@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Collapse from 'react-collapse';
+import Comment from './comment';
+import api from '../api';
 import moment from "moment";
 
 class Card extends Component {
@@ -7,7 +10,9 @@ class Card extends Component {
 
     this.state = {
       likes: props.likes || 0,
-      id: props.id
+      id: props.id,
+      reaction: false,
+      liked: false
     };
   }
 
@@ -19,8 +24,16 @@ class Card extends Component {
     return ago;
   }
 
+  handleLike(){
+    const {id, liked} = this.state;
+    api.post('post/like', {id, value: !liked && 1 || 0})
+      .then(res => this.setState({liked: !liked}))
+  }
+
   render() {
     const { user, gif, caption, likes, createdAt, comments } = this.props;
+    const {reaction, liked} = this.state;
+    console.log('liked: ', liked);
     return (
       <div className="card" style={{ marginBottom: 12 }}>
 
@@ -71,11 +84,22 @@ class Card extends Component {
               </div>
             </div>
             <div className="level-right">
-               <a className="level-item">
-                <span className="icon is-large"><i className="fa fa-heart-o"></i></span>
+               <a href="#" className="level-item" onClick={this.handleLike.bind(this)}>
+                <span className="icon is-large"><i className={`fa ${liked && 'fa-heart' || 'fa-heart-o'}`}></i></span>
               </a>
             </div>
           </nav>
+          <Collapse isOpened={reaction || true}>
+            <div class="columns">
+              <div class="column is-6">
+                  {
+                    comments.map((comment,i) => {
+                      return <Comment key={i} gif={comment.gif_url} author={comment.author} />
+                    })
+                  }
+              </div>
+            </div>
+          </Collapse>
         </div>
       </div>
     );
