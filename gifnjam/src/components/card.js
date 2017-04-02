@@ -90,8 +90,8 @@ class Card extends Component {
             </div>
           </nav>
           <Collapse isOpened={reaction || true}>
-            <div class="columns">
-              <div class="column is-6">
+            <div className="columns">
+              <div className="column is-10 is-offset-1">
                   {
                     comments.map((comment,i) => {
                       return <Comment key={i} gif={comment.gif_url} author={comment.author} />
