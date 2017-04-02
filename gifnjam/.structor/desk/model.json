@@ -1,0 +1,25 @@
+{
+  "pages": [
+    {
+      "pageName": "HomePage",
+      "pagePath": "/home",
+      "children": [
+        {
+          "type": "h3",
+          "props": {
+            "style": {
+              "textAlign": "center"
+            }
+          },
+          "children": [
+            {
+              "type": "span",
+              "text": "Header",
+              "props": {}
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

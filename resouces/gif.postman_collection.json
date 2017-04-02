@@ -1,0 +1,207 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Jif",
+        "_postman_id": "e4a7224a-2fe3-b525-57d1-adec55962c04",
+        "description": "",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Post",
+            "description": "",
+            "item": [
+                {
+                    "name": "List Posts",
+                    "request": {
+                        "url": "http://{{host}}:{{port}}/api/post",
+                        "method": "GET",
+                        "header": [],
+                        "body": {},
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Submit Post",
+                    "request": {
+                        "url": "http://{{host}}:{{port}}/api/post",
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "gif_url",
+                                    "value": "https://media.giphy.com/media/LRVnPYqM8DLag/giphy.gif",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "caption",
+                                    "value": "When your hack is due in less than 30 mins",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "author",
+                                    "value": "58e07f4321519c23cdd4e7fd",
+                                    "type": "text",
+                                    "enabled": true
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Posts",
+                    "request": {
+                        "url": "http://{{host}}:{{port}}/api/post/58e08709b0f57819d7ae2399",
+                        "method": "DELETE",
+                        "header": [],
+                        "body": {},
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Like a Post",
+                    "request": {
+                        "url": "http://{{host}}:{{port}}/api/post/like",
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "id",
+                                    "value": "58e0874a4ae86d77d73bd0fa",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "value",
+                                    "value": "1",
+                                    "type": "text",
+                                    "enabled": true
+                                }
+                            ]
+                        },
+                        "description": "set value=1 to like a post and value=0 to unlike the post"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "User",
+            "description": "",
+            "item": [
+                {
+                    "name": "Create User",
+                    "request": {
+                        "url": "http://{{host}}:{{port}}/api/user",
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "first_name",
+                                    "value": "Ashley",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "last_name",
+                                    "value": "Narcisse",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "username",
+                                    "value": "ash_daddy",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "ashlay49@gmail.com",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "supersecret",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "profile_photo",
+                                    "value": "http://static.boredpanda.com/blog/wp-content/uploads/2015/11/the-daily-life-of-darth-vader-is-my-latest-365-day-photo-project-33__880.jpg",
+                                    "type": "text",
+                                    "enabled": true
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "List Users",
+                    "request": {
+                        "url": "http://{{host}}:{{port}}/api/user",
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "first_name",
+                                    "value": "Ashley",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "last_name",
+                                    "value": "Narcisse",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "username",
+                                    "value": "ash_daddy",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "ashlay49@gmail.com",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "supersecret",
+                                    "type": "text",
+                                    "enabled": true
+                                },
+                                {
+                                    "key": "profile_photo",
+                                    "value": "http://static.boredpanda.com/blog/wp-content/uploads/2015/11/the-daily-life-of-darth-vader-is-my-latest-365-day-photo-project-33__880.jpg",
+                                    "type": "text",
+                                    "enabled": true
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ]
+}
