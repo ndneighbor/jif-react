@@ -26,13 +26,14 @@ class Card extends Component {
 
   handleLike(){
     const {id, liked} = this.state;
-    api.post('post/like', {id, value: liked && 1 || 0})
+    api.post('post/like', {id, value: !liked && 1 || 0})
       .then(res => this.setState({liked: !liked}))
   }
 
   render() {
     const { user, gif, caption, likes, createdAt, comments } = this.props;
     const {reaction, liked} = this.state;
+    console.log('liked: ', liked);
     return (
       <div className="card" style={{ marginBottom: 12 }}>
 
@@ -83,8 +84,8 @@ class Card extends Component {
               </div>
             </div>
             <div className="level-right">
-               <a className="level-item" onClick={this.handleLike.bind(this)}>
-                <span className="icon is-large"><i className={`fa fa-heart-o is-danger${liked && 'is-danger'}`}></i></span>
+               <a href="#" className="level-item" onClick={this.handleLike.bind(this)}>
+                <span className="icon is-large"><i className={`fa ${liked && 'fa-heart' || 'fa-heart-o'}`}></i></span>
               </a>
             </div>
           </nav>
@@ -92,8 +93,8 @@ class Card extends Component {
             <div class="columns">
               <div class="column is-6">
                   {
-                    comments.map(comment => {
-                      return <Comment gif={comment.gif_url} author={comment.author} />
+                    comments.map((comment,i) => {
+                      return <Comment key={i} gif={comment.gif_url} author={comment.author} />
                     })
                   }
               </div>
