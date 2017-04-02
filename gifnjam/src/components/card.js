@@ -1,35 +1,85 @@
-import React from 'react';
+import React, { Component } from "react";
+import moment from "moment";
 
+class Card extends Component {
+  constructor(props) {
+    super(props);
 
-const Card = ({user, gif, caption, comments}) => {
+    this.state = {
+      likes: props.likes || 0,
+      id: props.id
+    };
+  }
+
+  getFormattedDate(createAt) {
+    var now = moment();
+    var date = moment(createAt);
+    var ago = date.fromNow();
+    console.log(ago);
+    return ago;
+  }
+
+  render() {
+    const { user, gif, caption, likes, createdAt, comments } = this.props;
     return (
-        <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="http://bulma.io/images/placeholders/1280x960.png" alt="A Image Here"></img>
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="http://bulma.io/images/placeholders/96x96.png" alt="A Profile Here"></img>
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-4">John Smith</p>
-        <p class="subtitle is-6">@johnsmith</p>
-      </div>
-    </div>
+      <div className="card" style={{ marginBottom: 12 }}>
 
-    <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a>#css</a> <a>#responsive</a>
-      <br></br>
-      <small>11:09 PM - 1 Jan 2016</small>
-    </div>
-  </div>
-</div>
+        <div className="card-content">
+          <div className="media">
+            <div className="media-left">
+              <figure className="image is-48x48">
+                <img src={user.profile_photo} alt="A Profile Here" />
+              </figure>
+            </div>
+            <div className="media-content">
+              <p
+                style={{ color: "#402EA8", fontWeight: "bold" }}
+                className="title is-6"
+              >
+                {`${user.first_name} ${user.last_name}`}
+              </p>
+              <p className="subtitle is-6">
+                <small>{this.getFormattedDate(createdAt)}</small>
+              </p>
+            </div>
+          </div>
+
+          <div className="content">
+            {caption}
+            <br />
+          </div>
+        </div>
+        <div className="card-image">
+          <figure className="image">
+            <img src={gif} alt="A Image Here" />
+          </figure>
+        </div>
+        <div className="card-content">
+          <nav className="level is-mobile">
+            <div className="level-left">
+              <div className="level-item has-text-centered">
+                <div>
+                  <p className="heading">Likes</p>
+                  <p className="title">{likes}</p>
+                </div>
+              </div>
+              <div className="level-item has-text-centered">
+                <div>
+                  <p className="heading">Replies</p>
+                  <p className="title">{comments.length}</p>
+                </div>
+              </div>
+            </div>
+            <div className="level-right">
+               <a className="level-item">
+                <span className="icon is-large"><i className="fa fa-heart-o"></i></span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
     );
+  }
 }
+
+export default Card;
