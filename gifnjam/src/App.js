@@ -42,7 +42,7 @@ class App extends Component {
       .get("user")
       .then(users =>
         this.setState((prevState, props) => ({
-          currentUser: users.data[0]
+          currentUser: users.data[2]
         })))
       .catch(err => console.log("something went wrong fetching the user", err));
   }
@@ -72,7 +72,7 @@ class App extends Component {
                     return (
                       <Card
                         id={id}
-                        author={this.state.currentUser} 
+                        author={ this.state.currentUser} 
                         key={key}
                         user={author}
                         comments={comments}
