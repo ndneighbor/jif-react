@@ -6,14 +6,14 @@ const Card = ({user, gif, caption, comments}) => {
         <div class="card">
   <div class="card-image">
     <figure class="image is-4by3">
-      <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image"></img>
+      <img src="http://bulma.io/images/placeholders/1280x960.png" alt="A Image Here"></img>
     </figure>
   </div>
   <div class="card-content">
     <div class="media">
       <div class="media-left">
         <figure class="image is-48x48">
-          <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image"></img>
+          <img src="http://bulma.io/images/placeholders/96x96.png" alt="A Profile Here"></img>
         </figure>
       </div>
       <div class="media-content">
