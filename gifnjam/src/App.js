@@ -72,6 +72,7 @@ class App extends Component {
                     return (
                       <Card
                         id={id}
+                        author={this.state.currentUser} 
                         key={key}
                         user={author}
                         comments={comments}
@@ -79,6 +80,7 @@ class App extends Component {
                         caption={caption}
                         likes={likes}
                         createdAt={createdAt}
+                        onNewPost={this.onNewPost}
                         onLikePost={this.onNewPost}
                       />
                     );
