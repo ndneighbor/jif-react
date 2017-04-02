@@ -79,6 +79,7 @@ class App extends Component {
                         caption={caption}
                         likes={likes}
                         createdAt={createdAt}
+                        onLikePost={this.onNewPost}
                       />
                     );
                   })}

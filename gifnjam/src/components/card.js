@@ -24,10 +24,15 @@ class Card extends Component {
     return ago;
   }
 
-  handleLike(){
+  handleLike(event){
+    event.preventDefault();
     const {id, liked} = this.state;
     api.post('post/like', {id, value: !liked && 1 || 0})
-      .then(res => this.setState({liked: !liked}))
+      .then(res => {
+        this.setState({liked: !liked});
+        this.props.onLikePost();
+      })
+      
   }
 
   render() {
