@@ -6,6 +6,71 @@ nav.nav.gifnjam {
   font-size: large;
 }
 
+.section.newjam {
+  background-image: url("http://i.imgur.com/K4fOOGD.jpg");
+  background-repeat: repeat;
+}
+
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+}
+.search-input-wrap input {
+  width: 100%;
+  border: none;
+  box-shadow: none;
+}
+
+.profile-image {
+  position: relative;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+.profile-image img {
+  position: absolute;
+    left: 50%;
+    width: 150%;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: none;
+    display: block;
+    top: 50%;
+  transform: translate(-50%, -50%);
+}
+.profile-image:after {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.post-draft {
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+}
+.post-draft input{
+  padding: 24px 16px;
+  border: none;
+  box-shadow: none;
+}
+.post-draft .bottom {
+  padding: 8px 16px 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-draft button.button {
+  background: #402EA8;
+  color: white;
+  font-weight: bold;
+  padding: 8px 36px;
+}
+
 /* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

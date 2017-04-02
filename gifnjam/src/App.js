@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Card from "./components/card";
 import Nav from "./components/header";
+import NewJam from "./components/search";
 import api from "./api";
 import "./App.css";
 
@@ -12,6 +13,19 @@ class App extends Component {
       posts: [],
       currentUser: null
     };
+
+    this.onNewPost = this.onNewPost.bind(this);
+  }
+
+  onNewPost() {
+    api
+      .get("post")
+      .then(posts =>
+        this.setState((prevState, props) => ({
+          posts: posts.data
+        })))
+      .catch(err =>
+        console.log("something went wrong with fetching the posts", err));
   }
 
   componentWillMount() {
@@ -38,6 +52,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
+        {this.state.currentUser && <NewJam onNewPost={this.onNewPost} author={this.state.currentUser} />}
         <div className="section">
           <div className="container">
             <div className="columns">

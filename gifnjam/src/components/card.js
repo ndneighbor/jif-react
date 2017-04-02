@@ -50,7 +50,7 @@ class Card extends Component {
           </div>
         </div>
         <div className="card-image">
-          <figure className="image">
+          <figure className="image" style={{paddingLeft: 16, paddingRight: 16}}>
             <img src={gif} alt="A Image Here" />
           </figure>
         </div>
