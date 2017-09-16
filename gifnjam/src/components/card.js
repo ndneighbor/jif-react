@@ -33,7 +33,6 @@ class Card extends Component {
     }).then(res => {
         this.props.onNewPost();
         this.setState((_,__) => ({
-            caption:"",
             query: "",
             result: ""
         }));
